@@ -1,0 +1,21 @@
+{% extends "crapeaux/base.html" %}
+
+{% block content %}
+{% load static %}
+<div class="col-lg-5">
+    <img class="img-fluid rounded mb-4 mb-lg-0" src={% static "crapeaux/images/cascade_verticale_ecouges.png" %} />
+</div>
+<div class="col-lg-7">
+    <h1 class="font-weight-light">À propos</h1>
+    <p>L'association "Les Crap'Eaux" est un club de canyoning basé sur Grenoble,
+        fondée en 2023 par 4 amis passionés par cette activité :
+         <ul>
+            <li>Seb</li>
+            <li>Caro</li>
+            <li>Manu</li>
+            <li>Tom</li>
+         </ul>
+    </p>
+
+</div>
+{% endblock content %}
