@@ -23,7 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# The value of the DEBUG will be True by default, but will only be False if the value of the
+# DJANGO_DEBUG environment variable is set to False. Please note that environment variables are
+# strings and not Python types. We therefore need to compare strings. The only way to set the DEBUG
+# variable to False is to actually set it to the string False.
+# See https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment#getting_your_website_ready_to_publish
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ["127.0.0.1"]
 
