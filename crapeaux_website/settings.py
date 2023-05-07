@@ -32,6 +32,13 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ["127.0.0.1", "crapeaux-website-production.up.railway.app"]
 
+# CSRF protection for Railway
+# See https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Deployment#set_allowed_hosts_and_csrf_trusted_origins
+CSRF_TRUSTED_ORIGINS = ['https://crapeaux-website-production.up.railway.app/']
+
+# During development you can instead set just the base URL
+# CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
+
 
 # Application definition
 
